@@ -17,6 +17,7 @@ contract Todo {
     Todo[] public todos;
 
     event AddTodo(Todo[] _todos);
+    event Marked(bool _status);
     function create(string calldata _text) external{
         require(msg.sender == owner, "You need to be owner");
         todos.push(Todo({
@@ -40,6 +41,7 @@ contract Todo {
     function toggleCompleted(uint _index) external {
         require(msg.sender == owner, "You need to be owner");
         todos[_index].completed = !todos[_index].completed;
+        emit Marked(todos[_index].completed);
     }
 
     function getTodos() external view returns (Todo[] memory) {
