@@ -5,3 +5,25 @@
   -webkit-backdrop-filter: blur( 12px );
   border-radius: 10px;
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #b014db #212121;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #212121;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #b014db;
+    border-radius: 0px;
+    border: 0px solid #ffffff;
+  }

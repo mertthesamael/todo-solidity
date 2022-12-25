@@ -29,7 +29,6 @@ function App() {
       provider
     );
     const todos = await contract.getTodos();
-    console.log(todos);
     setTodos(todos);
   };
 
@@ -111,7 +110,6 @@ function App() {
         fetchSc();
       }
     } catch (err) {
-      console.log(err);
 
       setIsLogged(false);
       toast({
@@ -214,6 +212,7 @@ function App() {
             </form>
           </Box>
           <Box
+          overflow='auto'
             gap="2rem"
             p="0 2rem"
             w="100%"
